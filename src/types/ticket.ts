@@ -134,3 +134,17 @@ export type CreateCommentResponse = {
   message: string;
   comment: TicketComment;
 };
+
+export type ClassifyTicketInput = {
+  title: string;
+  description: string;
+};
+
+export type ClassifyTicketResponse = {
+  success: boolean;
+  suggestion: {
+    category: "HARDWARE" | "SOFTWARE" | "REDE" | "ACESSO" | "OUTROS";
+    priority: "BAIXA" | "MEDIA" | "ALTA" | "CRITICA";
+    reason: string;
+  };
+};

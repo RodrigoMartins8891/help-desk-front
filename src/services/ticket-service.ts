@@ -1,6 +1,8 @@
 import { api } from "./api";
 
 import type {
+  ClassifyTicketInput,
+  ClassifyTicketResponse,
   CreateCommentInput,
   CreateCommentResponse,
   CreateTicketInput,
@@ -35,6 +37,15 @@ export async function getTicketById(ticketId: number) {
 export async function createTicket(data: CreateTicketInput) {
   const response = await api.post<CreateTicketResponse>(
     "/tickets",
+    data,
+  );
+
+  return response.data;
+}
+
+export async function classifyTicket(data: ClassifyTicketInput) {
+  const response = await api.post<ClassifyTicketResponse>(
+    "/tickets/classify",
     data,
   );
 

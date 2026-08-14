@@ -16,7 +16,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-
+import { AIAgentAssistant } from "../components/AIAgentAssistant";
 import { MetricCard } from "../components/MetricCard";
 import { TicketBadge } from "../components/TicketBadge";
 import {
@@ -295,6 +295,8 @@ export function DashboardPage() {
           </table>
         </div>
       </section>
+
+      <AIAgentAssistant />
     </div>
   );
 }
